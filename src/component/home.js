@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Blogs from './blogs';
 import SpaceContactForm from './SpaceContactForm';
 import '../App.css';
+import woman from '../images/woman.jpeg';
 
 export default function HomePage() {
   const navigate = useNavigate(); // Initialize the navigate hook
@@ -17,7 +18,7 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4 mt-[-10px]">
           <div className="h-16 flex items-center justify-between">
             <div className="flex ml-[190px] items-center space-x-8">
-              {[
+              {[ 
                 { icon: FaHome, label: 'Home' },
                 { icon: FaBlog, label: 'Blogs' },
                 { icon: FaEnvelope, label: 'Contact Me' },
@@ -128,7 +129,10 @@ export default function HomePage() {
             >
               Explore Blogs
             </motion.button>
-            <div className="h-[270px] w-full aspect-[16/10] bg-gray-800 rounded-lg border-4 border-white" />
+            <div 
+              className="h-[270px] w-full aspect-[16/10] bg-gray-800 rounded-lg border-4 border-white" 
+              style={{ backgroundImage: 'url(https://scontent.fixm4-4.fna.fbcdn.net/o1/v/t0/f2/m340/AQNxCw5t7N5toUALyF26rTSIYmBaKDJMzcBBuMD-33rQjGKpAsPp-141b4Q_NVFuZs-na9wwPCOT1lQVXsqqixRTg7c21ZaRKI8sWTI8_xeQrTi_7s4k6Bi-_TprAUrFeV6UXfi29nQBF-CBB63Dq3N_4emsJA.jpeg?_nc_ht=scontent.fixm4-4.fna.fbcdn.net&_nc_cat=110&ccb=9-4&oh=00_AYCsdpHdctADhROUJ5X-XzAW0XgBA6sUvSl9UmPb6zBTdA&oe=677C8380&_nc_sid=5b3566)', backgroundSize: 'contain', backgroundPosition: 'center', backgroundRepeat: 'no-repeat', width: '400px' }} 
+            />
           </div>
 
           {/* Right Side */}
@@ -149,7 +153,10 @@ export default function HomePage() {
             >
               Write Blogs
             </motion.button>
-            <div className="h-[270px] w-full aspect-[16/10] bg-gray-800 rounded-lg border-4 border-white" />
+            <div 
+              className="h-[270px] w-full aspect-[16/10] bg-gray-800 rounded-lg border-4 border-white" 
+              style={{ backgroundImage: 'url(path-to-your-image.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', backgroundRepeat: 'no-repeat' }} 
+            />
           </div>
         </div>
       </div>
