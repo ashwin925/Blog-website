@@ -30,6 +30,8 @@ export default function HomePage() {
                   onClick={() => {
                     if (item.label === 'Signup') {
                       navigate('/signup'); // Navigate to the signup page
+                    } else if (item.label === 'Login') {
+                      navigate('/login'); // Navigate to the login page
                     }
                   }}
                   whileHover={{
