@@ -7,7 +7,7 @@ import { loadFull } from "tsparticles";
 import { signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import { auth } from "../firebase";
 
-const SpaceLoginForm = () => {
+const Login = () => {
   const [formData, setFormData] = useState({ email: '', password: '' });
   const [error, setError] = useState('');
 
@@ -39,44 +39,133 @@ const SpaceLoginForm = () => {
   };
 
   const handleGoogleSignIn = async () => {
+    const provider = new GoogleAuthProvider();  // Instantiate the GoogleAuthProvider here
+    
     try {
-      const result = await signInWithPopup(auth, GoogleAuthProvider);
+      const result = await signInWithPopup(auth, provider);  // Pass the instantiated provider
       console.log('Google sign-in successful:', result.user);
     } catch (err) {
       console.error(err);
       setError(err.message);
     }
   };
+  
 
   return (
-    <div className="relative min-h-screen flex items-center justify-center bg-black overflow-hidden">
+    <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-purple-900 to-indigo-900 overflow-hidden">
+      {/* Moving Nebula Effect (background) */}
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-blue-500 via-indigo-600 to-purple-900 opacity-80 animate-gradient-background" />
+      
       <Particles
         id="tsparticles"
         init={particlesInit}
         options={{
-          background: { color: { value: "#000011" } },
+          background: {
+            color: { value: "#000011" },
+          },
           fpsLimit: 60,
           interactivity: {
-            events: { onClick: { enable: true, mode: "push" }, onHover: { enable: true, mode: "repulse" }, resize: true },
-            modes: { push: { quantity: 4 }, repulse: { distance: 200, duration: 0.4 } },
+            events: {
+              onClick: { enable: true, mode: "push" },
+              onHover: { enable: true, mode: "repulse" },
+              resize: true,
+            },
+            modes: {
+              push: { quantity: 6 }, // Increase quantity when clicked
+              repulse: { distance: 70, duration: 0.8 }, // Stronger repulse effect
+            },
           },
           particles: {
-            color: { value: "#ffffff" },
-            links: { color: "#ffffff", distance: 150, enable: true, opacity: 0.5, width: 1 },
-            move: { direction: "none", enable: true, outModes: { default: "bounce" }, random: false, speed: 1, straight: false },
-            number: { density: { enable: true, area: 800 }, value: 80 },
-            opacity: { value: 0.5 },
-            shape: { type: "circle" },
-            size: { value: { min: 1, max: 5 } },
+            color: {
+              value: ["#ffffff", "#ff4cff", "#3e00ff"], // Gradient color effect for variety
+            },
+            links: {
+              color: "#ffffff",
+              distance: 200,
+              enable: true,
+              opacity: 0.5,
+              width: 1,
+              animation: {
+                enable: true,
+                speed: 1,
+              },
+            },
+            move: {
+              direction: "none",
+              enable: true,
+              outModes: { default: "bounce" },
+              random: true,
+              speed: 3,
+              straight: false,
+              attract: {
+                enable: true,
+                rotateX: 2000,
+                rotateY: 2000,
+              },
+              path: {
+                enable: true,
+                clamp: true,
+                delay: 0.1,
+                options: {
+                  type: "circle", // Particles follow a circular path
+                  radius: 30,
+                  animation: {
+                    speed: 5,
+                  },
+                },
+              },
+            },
+            number: {
+              density: { enable: true, area: 800 },
+              value: 150, // Increase particle count for a denser effect
+            },
+            opacity: {
+              value: 0.8,
+              animation: {
+                enable: true,
+                speed: 1,
+                minimumValue: 0.4,
+              },
+            },
+            shape: {
+              type: ["circle", "polygon", "triangle"], // Multiple particle shapes for diversity
+              polygon: {
+                sides: 5, // Pentagon shape
+              },
+            },
+            size: {
+              value: { min: 3, max: 8 },
+              animation: {
+                enable: true,
+                speed: 5,
+                minimumValue: 3,
+              },
+            },
+            roll: {
+              darken: { enable: true, value: 20 },
+              enable: true,
+              speed: 15,
+            },
+            life: { enable: false }, // Ensure particles are permanent
+            trail: {
+              enable: true, // Enable trails for a more fluid movement
+              length: 10,
+              fillColor: "#ffffff",
+            },
+            // Adding more visual variety with custom animations
+            zIndex: {
+              value: 10,
+            },
           },
           detectRetina: true,
         }}
       />
+
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="relative ml-[-230px] z-10 bg-gray-900 bg-opacity-75 p-8 rounded-lg shadow-lg max-w-md w-full backdrop-filter backdrop-blur-sm"
+        className="relative z-10 bg-gray-900 bg-opacity-75 p-8 rounded-lg shadow-lg max-w-md w-full backdrop-filter backdrop-blur-sm border-4 border-purple-600 glow-border"
       >
         <motion.h2
           className="text-4xl font-bold text-center text-purple-400 mb-6"
@@ -135,8 +224,16 @@ const SpaceLoginForm = () => {
           Sign in with Google
         </motion.button>
       </motion.div>
+
+      {/* Transparent Buttons */}
+      <div className="absolute top-1/2 mr-[740px] transform -translate-y-1/2 bg-transparent border-2 border-white text-purple-600 py-2 px-4 font-semibold rounded-md cursor-pointer">
+        Click Me
+      </div>
+      <div className="absolute top-1/2 ml-[750px] transform -translate-y-1/2 bg-transparent border-2 border-white text-purple-600 py-2 px-4 font-semibold rounded-md cursor-pointer">
+        Click Me
+      </div>
     </div>
   );
 };
 
-export default SpaceLoginForm;
+export default Login;
