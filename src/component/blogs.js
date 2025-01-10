@@ -11,6 +11,7 @@ import combo1 from "../images/combo1.jpeg";
 import combo2 from "../images/combo2.jpeg";
 import diamond1 from "../images/diamond1.jpeg";
 import triangle1 from "../images/triangle1.jpeg";
+import blog1 from "../images/blog1.jpeg";
 import "../App.css";
 
 const Blogs = () => {
@@ -18,26 +19,37 @@ const Blogs = () => {
 
   const blogs = [
     {
+      id: 1, // Add unique identifiers for each blog
       title: "The Future of Architecture",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://scontent.fixm4-4.fna.fbcdn.net/o1/v/t0/f2/m340/AQOjMt3epCHf2QBhQAq71fKmowZyCxA1iRq2oqeQFdV6W_zOXVv0cebBEoS7cNbv2ecO_DV_tPFvCLKMQxFVUcn9RR-cVwgNpIQei4a5hln9fS2jOpcX_AVdJoOaS9wadRel83n-bla-gVoCfQD1Nto36UtINQ.jpeg?_nc_ht=scontent.fixm4-4.fna.fbcdn.net&_nc_cat=104&ccb=9-4&oh=00_AYChq7bu4RuTKKCYDSSfWte3OwmHEX-EEI_YpsXs3ZhZEg&oe=6782C5A6&_nc_sid=5b3566", // Replace with actual URLs
+      description: "Explore the future of architecture with cutting-edge designs.",
     },
     {
+      id: 2,
       title: "The Cultural Significance of Greenhouses",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://scontent.fixm4-4.fna.fbcdn.net/o1/v/t0/f2/m340/AQOM8LNC3K540qmhcohsmOuclTlDFpcI2vbAmQAgHcylRM3_ji0Pi0Of7ijfBFL-6Gcjj5IO4ts7Qh4lEnKFF9IKwCT620MSycb8zu3AQoJP7WtYQidJCy-qJPOKhpVaiYs-ZJI1La6A7XzT62dl0vO8Raal.jpeg?_nc_ht=scontent.fixm4-4.fna.fbcdn.net&_nc_cat=101&ccb=9-4&oh=00_AYBOnk6FQeEUIYeEXcRJUQpXdz6bnVKWO0xD6-YBiOdLqg&oe=6782D1F9&_nc_sid=5b3566",
+      description: "Dive into the history and importance of greenhouses in culture.",
     },
     {
+      id: 3,
       title: "Modern Urban Planning",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://scontent.fixm4-4.fna.fbcdn.net/o1/v/t0/f2/m340/AQOM8LNC3K540qmhcohsmOuclTlDFpcI2vbAmQAgHcylRM3_ji0Pi0Of7ijfBFL-6Gcjj5IO4ts7Qh4lEnKFF9IKwCT620MSycb8zu3AQoJP7WtYQidJCy-qJPOKhpVaiYs-ZJI1La6A7XzT62dl0vO8Raal.jpeg?_nc_ht=scontent.fixm4-4.fna.fbcdn.net&_nc_cat=101&ccb=9-4&oh=00_AYBOnk6FQeEUIYeEXcRJUQpXdz6bnVKWO0xD6-YBiOdLqg&oe=6782D1F9&_nc_sid=5b3566",
+      description: "Learn about the innovations in urban planning today.",
     },
     {
+      id: 4,
       title: "Urban Green Spaces",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://scontent.fixm4-4.fna.fbcdn.net/o1/v/t0/f2/m340/AQNKR18Qzl56RADyL79gUmDyw9G9_9MyD6X0qAUy-e5c9CKP2PjT05qsOYgfXn7wxBxc0bnbezfNmm2Ys2AoMT2zNEoaY2aG3fKBDxL4-il_eybvUY_2td2wxkVsckhHhi2g16-oql40jd3H4Fi33qcVEJJBSA.jpeg?_nc_ht=scontent.fixm4-4.fna.fbcdn.net&_nc_cat=107&ccb=9-4&oh=00_AYD8ngDuFULp6OJAUbhcJPzKs5SJHLtna-3cNb-hSJk1sg&oe=6782D3AF&_nc_sid=5b3566",
+      description: "Discover the benefits of green spaces in urban environments.",
     },
     {
+      id: 5,
       title: "The Evolution of Smart Cities",
-      image: "/placeholder.svg?height=400&width=600",
+      image: "https://scontent.fixm4-4.fna.fbcdn.net/o1/v/t0/f2/m340/AQPNqMdHXPcC9OciL_X0l02zTdbiNkeWZ7dGU_Jp9AQTGFCcVLfR0WzBLbM1znSizULHK3g3AulI9h9VGh9AdeOMPeLRevRusYAJx5tuP5dI-vhTtUcGzQac_kv2HM4TYRN9YrGpQSALqdiAAnMcGxJTnRbang.jpeg?_nc_ht=scontent.fixm4-4.fna.fbcdn.net&_nc_cat=101&ccb=9-4&oh=00_AYDXVGKyNia0_QSOfSK-ibG-uigcn0MIq71-rxKG85cAAw&oe=6782D70D&_nc_sid=5b3566",
+      description: "Understand how smart cities are reshaping our world.",
     },
   ];
+  
 
   const handleNext = () => {
     setCurrentIndex((prev) => (prev === blogs.length - 1 ? 0 : prev + 1));
