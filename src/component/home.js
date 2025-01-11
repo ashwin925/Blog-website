@@ -2,7 +2,7 @@
 
 import { FaHome, FaBlog, FaEnvelope, FaUserPlus, FaSignInAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import Blogs from './blogs';
 import SpaceContactForm from './SpaceContactForm';
 import '../App.css';

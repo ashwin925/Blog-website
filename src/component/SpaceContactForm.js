@@ -23,7 +23,7 @@ export default function SpaceContactForm() {
 
   // The rest of the component remains the same
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900 text-white relative overflow-hidden">
+    <div className="h-[530px] flex items-center justify-center bg-gray-900 text-white relative overflow-hidden">
       <StarBackground />
       <FloatingEarth />
       <PulsatingPlanet />

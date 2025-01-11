@@ -237,3 +237,12 @@ const Login = () => {
 };
 
 export default Login;
+// import cube1 from "../images/cube1.jpeg";
+// import cube2 from "../images/cube2.jpeg";
+// import cube3 from "../images/cube3.jpeg";
+// import circel1 from "../images/circel1.jpeg";
+// import combo1 from "../images/combo1.jpeg";
+// import combo2 from "../images/combo2.jpeg";
+// import diamond1 from "../images/diamond1.jpeg";
+// import triangle1 from "../images/triangle1.jpeg";
+// import blog1 from "../images/blog1.jpeg";
