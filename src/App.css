@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
 
 .App {
   text-align: center;
@@ -43,7 +47,6 @@
   }
 }
 
-
 /* blogs.css */
 .blogs-container {
   position: relative;
@@ -73,7 +76,12 @@
   margin: 10px;
   width: 300px;
   height: 400px;
-  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Semi-transparent white background */
   border-radius: 10px;
   overflow: hidden;
   position: relative;
@@ -123,26 +131,36 @@
   flex-grow: 1;
 }
 .glow-border {
-  box-shadow: 0 0 30px rgba(167, 139, 250, 0.9), 0 0 50px rgba(167, 139, 250, 0.7);
+  box-shadow: 0 0 30px rgba(167, 139, 250, 0.9),
+    0 0 50px rgba(167, 139, 250, 0.7);
   animation: glowAnimation 1.5s ease-in-out infinite;
 }
 
 @keyframes glowAnimation {
   0% {
-    box-shadow: 0 0 30px rgba(167, 139, 250, 0.9), 0 0 50px rgba(167, 139, 250, 0.7);
+    box-shadow: 0 0 30px rgba(167, 139, 250, 0.9),
+      0 0 50px rgba(167, 139, 250, 0.7);
   }
   50% {
-    box-shadow: 0 0 60px rgba(167, 139, 250, 0.8), 0 0 100px rgba(167, 139, 250, 0.6);
+    box-shadow: 0 0 60px rgba(167, 139, 250, 0.8),
+      0 0 100px rgba(167, 139, 250, 0.6);
   }
   100% {
-    box-shadow: 0 0 30px rgba(167, 139, 250, 0.9), 0 0 50px rgba(167, 139, 250, 0.7);
+    box-shadow: 0 0 30px rgba(167, 139, 250, 0.9),
+      0 0 50px rgba(167, 139, 250, 0.7);
   }
 }
 
 @keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .animate-gradient-background {

@@ -6,8 +6,6 @@ import { useNavigate } from 'react-router-dom';
 import Blogs from './blogs';
 import SpaceContactForm from './SpaceContactForm';
 import '../App.css';
-import woman from '../images/woman.jpeg';
-
 export default function HomePage() {
   const navigate = useNavigate(); // Initialize the navigate hook
 
@@ -19,19 +17,21 @@ export default function HomePage() {
           <div className="h-16 flex items-center justify-between">
             <div className="flex ml-[190px] items-center space-x-8">
               {[ 
-                { icon: FaHome, label: 'Home' },
-                { icon: FaBlog, label: 'Blogs' },
-                { icon: FaEnvelope, label: 'Contact Me' },
+                { icon: FaHome, label: 'Home', target: '#home-section' },
+                { icon: FaBlog, label: 'Blogs', target: '#blogs-section' },
+                { icon: FaEnvelope, label: 'Contact Me', target: '#contact-section' },
                 { icon: FaUserPlus, label: 'Signup' },
                 { icon: FaSignInAlt, label: 'Login' },
               ].map((item, index) => (
                 <motion.button
                   key={item.label}
                   onClick={() => {
-                    if (item.label === 'Signup') {
-                      navigate('/signup'); // Navigate to the signup page
+                    if (item.target) {
+                      document.querySelector(item.target)?.scrollIntoView({ behavior: 'smooth' });
+                    } else if (item.label === 'Signup') {
+                      navigate('/signup');
                     } else if (item.label === 'Login') {
-                      navigate('/login'); // Navigate to the login page
+                      navigate('/login'); 
                     }
                   }}
                   whileHover={{
@@ -162,8 +162,13 @@ export default function HomePage() {
           </div>
         </div>
       </div>
-      <Blogs />
-      <div>
+      <div id="home-section">
+        <HomePage />
+      </div>
+      <div id="blogs-section">
+        <Blogs />
+      </div>
+      <div id="contact-section">
         <SpaceContactForm />
       </div>
     </div>
