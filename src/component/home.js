@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import Blogs from './blogs';
 import SpaceContactForm from './SpaceContactForm';
+import Content from './content';
 import '../App.css';
 export default function HomePage() {
   const navigate = useNavigate(); // Initialize the navigate hook
@@ -32,6 +33,8 @@ export default function HomePage() {
                       navigate('/signup');
                     } else if (item.label === 'Login') {
                       navigate('/login'); 
+                    } else if (item.label === 'Blogs') {
+                      navigate('/content'); 
                     }
                   }}
                   whileHover={{

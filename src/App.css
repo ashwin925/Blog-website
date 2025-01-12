@@ -171,8 +171,8 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -180,7 +180,7 @@ body {
   color: #fff;
 }
 
-.blogcon {
+.app {
   min-height: 100vh;
   position: relative;
 }
@@ -195,21 +195,16 @@ body {
 }
 
 .content {
+  min-height: 100vh;
   position: relative;
-  z-index: 1;
-}
-
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .title {
   font-size: 2rem;
-  margin: 0;
+  position: relative;
+  top: 10px;
+  left: 10px;
+  color: gold;
 }
 
 .home-button {
@@ -217,9 +212,11 @@ body {
   background-color: #3498db;
   color: white;
   border: none;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   transition: background-color 0.3s;
+  right: 30px;
+  top: 20px;
 }
 
 .home-button:hover {
@@ -230,20 +227,43 @@ main {
   padding: 2rem;
 }
 
+.blog-container {
+  position: relative;
+  z-index: 1;
+  height: 100vh; /* Full viewport height */
+  overflow-y: auto; /* Enable scrolling */
+  scroll-snap-type: y mandatory; /* Enable scroll snapping */
+}
+
 .blog-post {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent */
   border-radius: 8px;
   padding: 1.5rem;
-  margin-bottom: 2rem;
+  margin-top: -10px;
+  margin-bottom: 40px;
+  border: 4px solid blue; /* Blue border similar to button color */
+  height: 490px; /* Full viewport height minus padding */
+  width: 80%; /* Default width, can be adjusted */
+  max-width: 1200px; /* Maximum width */
+  margin-left: auto;
+  margin-right: auto;
+  scroll-snap-align: start; /* Snap to the start of each blog post */
+  overflow-y: auto; /* Enable scrolling within each blog post if content overflows */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  resize: horizontal; /* Allow horizontal resizing */
+  overflow: auto; /* Show scrollbars when content overflows */
+  min-width: 300px; /* Set a minimum width */
 }
 
 .blog-title {
   font-size: 1.5rem;
   margin-top: 0;
+  color: cyan;
 }
 
 .blog-excerpt {
   margin-bottom: 1rem;
+  color: lime;
 }
 
 .read-more {
@@ -269,5 +289,15 @@ main {
   .home-button {
     margin-top: 1rem;
   }
+
+  .blog-post {
+    width: 90%; /* Adjust width for smaller screens */
+  }
 }
 
+/* Style the resize handle */
+.blog-post::-webkit-resizer {
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent #3498db #3498db transparent;
+}
